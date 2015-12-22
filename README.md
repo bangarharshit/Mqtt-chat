@@ -2,7 +2,7 @@
 Contains SPEC for designing chat based on Mqtt
 
 ```
-Designing a sane chat based on mqtt.
+Designing a sane chat protocol based on mqtt.
 1. Servers emqtt - https://github.com/emqtt/emqttd or vernemq - https://github.com/erlio/vernemq
 2. Client - eclipse paho.
 3. channels - client1/others/chatstate, client1/others/presence, client1/others/profile, client1/self/invitations. Client1 subscribes to client1/self. Client 2 and others subscribe to client1/others/*. Authorization by client1 on client/others.
@@ -11,6 +11,9 @@ Designing a sane chat based on mqtt.
 6. Persistent session - autosubscribe - client1/*, groupchat/* . Mark all your client tables with a subscribed field to make sure for subscription.
 7. Client state indication - Drop chat states, Group presence and deliver when client state = active (v2). Bundle/Drop incoming packet if your app is in background.
 8. Bundle outgoing packets (not critical).
+9. Work across resource. If you have a web client, desktop client, mobile client message should be synced across all. Indication if the message is seen across clients.
+10. Should work with clients with no offline storage.
+11. Add support for send, delivery and read receipts.
 ```
 
 
