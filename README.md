@@ -14,6 +14,7 @@ Designing a sane chat protocol based on mqtt.
 9. Work across resource. If you have a web client, desktop client, mobile client message should be synced across all. Indication if the message is seen across clients.
 10. Should work with clients with no offline storage.
 11. Add support for send, delivery and read receipts.
+12. Also add provision for GCM, APNS to make it work with app standy mode and IOS systems.
 ```
 
 
